@@ -23,12 +23,12 @@
 %
 %% Set parameters
 load("p_base_values_conv.mat",'p'); %load base values
-% p.ic = [400.857202814214, 0.646369044549, 1.00002796940515, -3.79683468406686e-05, 494.189813758044, 0.324124717495546, 1.0000169094565, 7.35735153932896e-05, 484.69763013887, 0.299993534301783, 0.414729082679925, 6.08967772196069e-05 ];
 
- 
+% other initial conditions
+% p.ic = [400.857202814214, 0.646369044549, 1.00002796940515, -3.79683468406686e-05, 494.189813758044, 0.324124717495546, 1.0000169094565, 7.35735153932896e-05, 484.69763013887, 0.299993534301783, 0.414729082679925, 6.08967772196069e-05 ];
 %icinit =  [2.513464916211947e+02, 0.719606522947843e+04, 1.000027969405150, -3.796834684066860e-05, 2.675040993016955e+02, 0.683872730768198, 1.000043214013321, -3.326578858649950e-05, 4.067700935219721e+02, 1.642175807274792, 1.999885855326992, 2.683602508176260e-05];
-    % 
-    icinit = p.ic;
+    
+icinit = p.ic;
 p.T_s2 = 15;      
 p.L2 = 235e3; % for sufficently cold temperatures, accumulation dominates
 %  unrealistically for small ice stream footprints,thus a sufficent length
@@ -100,6 +100,7 @@ end
 
 xlabel('T_{s2} (-°C)', 'FontSize', 13);
 ylabel('Peak Total Ice Volume (km^3)', 'FontSize', 13);
+% title excluded
 %title('Bifurcation Diagram: Peak Ice Volume vs Surface Temperature T_{s2} (T_{s1}, T_{s3} = 15)', 'FontSize', 13);
 %grid on;
 box off;
