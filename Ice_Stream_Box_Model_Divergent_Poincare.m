@@ -18,6 +18,7 @@
 %% Set up
 load("p_base_values.mat", "p"); 
 
+% other temperature and box 1 length values used in plots available
 Ts2val_combined_v2 = [14.02, 10.2705, 10.27055, 10.2706];%[10.149, 10.150, 10.15058, 10.152];%[19.01,13.68,14.8,19.51];%[13.251, 13.252, 13.562, 13.63];[19.01,13.68,14.8,19.51];%[13.251, 13.252, 13.562, 13.63];%
 L1vals_combined = [55e3,30e3,30e3,30e3];%[55e3,55e3,55e3,55e3]; [58e3,71.6e3,54.8e3,35.5e3];
 
@@ -28,11 +29,7 @@ V_total_all = cell(1, nRuns);
 e3_all      = cell(1, nRuns);
 
 for i = 1:nRuns
-    p.e_c     = 0.3;      % till consolidation void ratio
-p.hmin = 10;        % minimum till height (renamed from "hmin" so it matches
-                       % what myEventsLive actually reads: p_live.h_t_min)
-p.c       = 21.7;      % empirical till exponent
-p.tau0    = 9.44e8;    % empirical till coefficient
+
 p.L2  = 215e3;
 p.L2f = p.L2;
 
