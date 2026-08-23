@@ -25,8 +25,6 @@
 load("p_base_values_conv.mat",'p');
 
 p.T_s2 = 15;      
-
-
 p.rate = 0;		% K/yr
 p.start_time = 0; 
 icinit = p.ic;
@@ -41,10 +39,10 @@ for i = 1:201
 
 
     bifurc_L2_inc{i,1} =  {p.L2};
-%     
+     
     % first, run for 20e4 years to get a point on the attractor
     p.tspan=[0,20e4*p.year];  
-   % icinit = Tinit(end,:);
+  
    
   
     options = odeset('RelTol',1e-6,'AbsTol',1e-6, 'OutputFcn', []);     %set ode integration settings
@@ -100,7 +98,7 @@ icinit = ic_from_inc_st;
 tic
 for i = 1:201
     iter_start = tic;
-% choose decreasing L2 values
+    % choose decreasing L2 values
     p.L2 =  240e3 - 60e3/200*(i-1);
     bifurc_L2_inc(i,1) =  {p.L2};
 
@@ -112,10 +110,8 @@ for i = 1:201
     options = odeset('RelTol',1e-6,'AbsTol',1e-6, 'OutputFcn', []);     %set ode integration settings
     [timeinit,Tinit] = ode45(@(t,X) Ice_Stream_Box_Model_RHS_Convergent(t,X,p),[0,20e4*p.year],icinit,options);  %integrate box model
    
-
     p.ic= Tinit(end,:);
     p.tspan=[0,p.year*t_final];     
-
 
     bifurc_L2_inc(i,2) = {peak_Vice_Convergent(p)};
    
