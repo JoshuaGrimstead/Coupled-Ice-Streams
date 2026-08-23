@@ -21,7 +21,7 @@ the model is included for comparison.
 - Parallel Computing Toolbox (`parfor`, `parpool`) — for the parameter
   sweep and the Rosenstein grid
 
-The parameter sweep and the Lyapunov grid were run on an HPC cluster with 48. Both call `parpool(48)`; reduce this to suit your
+The parameter sweep and the Lyapunov grid were run on an HPC resource using 48 cores. Both call `parpool(48)`; reduce this to suit your
 machine. Everything else runs on a desktop.
 
 ---
@@ -32,21 +32,21 @@ machine. Everything else runs on a desktop.
 
 | File | Purpose |
 |---|---|
-| `[Ice_Stream_Box_Model_Divergent.m]` | The divergent-topology model: state derivatives and event function |
-| `[Ice_Stream_Box_Model_Convergent.m]` | The convergent-topology model: state derivatives and event function |
-| `[p_base_values.mat]` | Shared physical parameters for divergent model |
-| `[p_base_values_conv.mat]` | Shared physical parameters for convergent model|
-| `[ peak_Vice_Divergent.m]` | Find peaks in ice stream volume for the divegent model |
-| `[ peak_Vice_Convergent.m]` | Find peaks in ice stream volume for the convergent model |
+| `Ice_Stream_Box_Model_Divergent.m` | The divergent-topology model: state derivatives and event function |
+| `Ice_Stream_Box_Model_Convergent.m` | The convergent-topology model: state derivatives and event function |
+| `p_base_values.mat` | Shared physical parameters for divergent model |
+| `p_base_values_conv.mat` | Shared physical parameters for convergent model|
+| `peak_Vice_Divergent.m` | Find peaks in ice stream volume for the divegent model |
+| `peak_Vice_Convergent.m` | Find peaks in ice stream volume for the convergent model |
 
 ### Single-run diagnostics
 
 | File | Purpose |
 |---|---|
-| `[..._Divergent_Timeseries.m]` | Integrates one parameter set and plots the state through time |
-| `[..._Divergent_Poincare.m]` | Poincaré section for one parameter set |
-| `[..._Divergent_Transient_Test.m]` | Sensitivity of the solution to `L2` and `L3`, used to set the transient discarded before analysis |
-| `[..._Convergent_Time_Series.m]` | Time series for the convergent model |
+| `Ice_Stream_Box_Model_Divergent_Timeseries.m` | Integrates one parameter set and plots the state through time |
+| `Ice_Stream_Box_Model_Divergent_Poincare.m` | Poincaré section for one parameter set |
+| `Ice_Stream_Box_Model_Divergent_Transient_Test.m` | Sensitivity of the solution to `L2` and `L3`, used to set the transient discarded before analysis |
+| `Ice_Stream_Box_Model_Convergent_Time_Series.m` | Time series for the convergent model |
 
 
 ### Parameter sweep
@@ -67,10 +67,10 @@ machine. Everything else runs on a desktop.
 
 | File | Purpose |
 |---|---|
-| `[..._Divergent_Length_Bif_Hysteresis.m]` | Bifurcation diagram varying `L2` demonstrating hysteresis |
-| `[..._Divergent_Temp_Bif.m]` | Bifurcation diagram varying `T_s2` |
-| `[..._Convergent_Length_Bif_Hysteresis.m]` | As above, convergent model |
-| `[..._Convergent_Temp_Bif.m]` | As above, convergent model |
+| `Ice_Stream_Box_Model_Divergent_Length_Bif_Hysteresis.m` | Bifurcation diagram varying `L2` demonstrating hysteresis |
+| `Ice_Stream_Box_Model_Divergent_Temp_Bif.m` | Bifurcation diagram varying `T_s2` |
+| `Ice_Stream_Box_Model_Convergent_Length_Bif_Hysteresis.m` | As above, convergent model |
+| `Ice_Stream_Box_Model_Convergent_Temp_Bif.m` | As above, convergent model |
 
 ### Plotting
 
