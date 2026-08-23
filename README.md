@@ -1,10 +1,10 @@
-# Variability-in-a-Model-of-Divergent-and-Convergent-Coupled-Ice-Streams
+# Variability in a Model of Divergent and Convergent Coupled Ice Streams
 Code used to support the MSc dissertation of Joshua Grimstead and subsequently
 Grimstead et al. (2026). Ice stream model code originally developed by Alex Robel and initially adapted by Kolja Kypke for a divergent coupling.
 
 
-This repository contains a box model of an ice stream with divergent
-topology, together with the analysis used to characterise its dynamics:
+This repository contains a box model of an ice stream with divergent and convergent
+topologies, together with the analysis used to characterise its dynamics:
 time series, Poincaré sections, a high-resolution parameter sweep in
 (`T_s2`, `L1`), maximal Lyapunov exponents by Rosenstein's method, and
 bifurcation diagrams in `L2` and `T_s2`. A convergent-topology variant of
@@ -46,7 +46,7 @@ machine. Everything else runs on a desktop.
 | `Ice_Stream_Box_Model_Divergent_Timeseries.m` | Integrates one parameter set and plots the state through time |
 | `Ice_Stream_Box_Model_Divergent_Poincare.m` | Poincaré section for one parameter set |
 | `Ice_Stream_Box_Model_Divergent_Transient_Test.m` | Sensitivity of the solution to `L2` and `L3`, used to set the transient discarded before analysis |
-| `Ice_Stream_Box_Model_Convergent_Time_Series.m` | Time series for the convergent model |
+| `Ice_Stream_Box_Model_Convergent_Timeseries.m` | Time series for the convergent model |
 
 
 ### Parameter sweep
@@ -99,7 +99,7 @@ so the stages can be run independently once it exists.
    and `cloud_rel` .
 
 
-4. **Complexity and winding** — [`Ice_Stream_Box_Model_Divergent_Frequency_Plot.m`] produces plots and
+4. **Complexity and winding** — `Ice_Stream_Box_Model_Divergent_Frequency_Plot.m` produces plots and
    `arnold_tongue_complexity_winding_frequencyratio.mat`.
 
 5. **Plots** — run
