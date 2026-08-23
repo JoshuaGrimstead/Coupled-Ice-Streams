@@ -134,9 +134,6 @@ k_fit_end = firstAtOrAbove(L, sat_level, o.KMin + o.MinFitPts);
 res.lambda = fitSlope(L, k_fit_end, o.MinFitPts, o.KMin);
 res.lambda_phys = res.lambda / mrt;
 
-
-
-
 end 
 
 
