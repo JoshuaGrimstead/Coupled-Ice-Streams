@@ -54,7 +54,8 @@ machine. Everything else runs on a desktop.
 | File | Purpose |
 |---|---|
 | `Ice_Stream_Box_Model_Divergent_Parameter_Sweep.m` | High-resolution sweep over (`T_s2`, `L1`); writes Poincaré crossings and crossing times for every cell |
-
+| `updateProgress.m` |Quality of life function for parameter sweep DataQueue|
+| `printIterationInfo4.m` |Quality of life function for parameter sweep DataQueue|
 ### Lyapunov exponents
 
 | File | Purpose |
